@@ -1,0 +1,14 @@
+spring:
+    application:
+        name: config-server
+    profiles:
+        active: native
+    cloud:
+        config:
+            server:
+                native:
+                    searchLocations: file:///D:/spam/config
+                    failOnError : true
+
+server:
+    port: 8280
