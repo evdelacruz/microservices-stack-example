@@ -1,8 +1,10 @@
-package org.jsamples.microservices.calculator.controllers;
+package org.jsamples.microservices.rh.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 /**
  * Controlador <b>REST</b> para operaciones artim&eacute;ticas.
@@ -10,13 +12,15 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Erick Vega De la Cruz
  * @since 1.0
  */
-@RestController("/arithmetic-operations/")
-public class ArithmeticController {
+@RestController("/rrhh/")
+public class RrhhController {
+    private @Autowired RestTemplate restTemplate;
+    private String serviceURL = "http://CALCULATOR-CLIENT/";
 
-    public ArithmeticController() {}
+    public RrhhController() {}
 
-    @RequestMapping(value="/sum", method=RequestMethod.POST)
-    public int sum(int num1, int num2) {
+    @RequestMapping(value="/resources", method=RequestMethod.POST)
+    public int add(int num1, int num2) {
         return num1 + num2;
     }
 

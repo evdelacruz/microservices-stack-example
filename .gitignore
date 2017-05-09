@@ -1,3 +1,3 @@
-/config-server/.idea
-/config-server/.gradle
-/config-server/build
+/*/.idea
+/*/.gradle
+/*/build

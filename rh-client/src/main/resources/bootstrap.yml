@@ -1,6 +1,6 @@
 spring:
     application:
-        name: calculator-client
+        name: rh-client
     cloud:
         config:
             failFast: true
