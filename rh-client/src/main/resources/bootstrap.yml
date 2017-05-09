@@ -1,0 +1,8 @@
+spring:
+    application:
+        name: calculator-client
+    cloud:
+        config:
+            failFast: true
+            uri: http://localhost:8280
+
