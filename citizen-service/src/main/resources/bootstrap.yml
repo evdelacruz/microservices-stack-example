@@ -1,0 +1,10 @@
+spring:
+    application:
+        name: citizen-service
+    cloud:
+        config:
+            failFast: true
+            uri: http://localhost:8280
+
+server:
+    port: 8281
