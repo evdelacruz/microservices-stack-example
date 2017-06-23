@@ -37,7 +37,7 @@ dependencies {
 }
 
 bootRepackage {
-    mainClass = 'org.jsamples.microservices.rh.Main'
+    mainClass = 'org.jsamples.microservices.order.Main'
     executable = true
 }
 
@@ -45,10 +45,10 @@ jar {
     manifest {
         attributes 'Specification-Vendor'       : 'Erick\'s Software',
                    'Specification-Version'      : version,
-                   'Specification-Title'        : 'Microservices Human Resources Client',
+                   'Specification-Title'        : 'Microservices Order Service',
                    'Implementation-Vendor'	    : 'evdelacruz',
                    'Implementation-Version'	    : (null != System.env.BUILD_NUMBER) ? System.env.BUILD_NUMBER : '0',
-                   'Implementation-Title'	    : 'rh-client',
+                   'Implementation-Title'	    : 'order-service',
                    'Implementation-Unit'   	    : 'Microservices',
                    'Java-Specification-Version' : sourceCompatibility
     }
