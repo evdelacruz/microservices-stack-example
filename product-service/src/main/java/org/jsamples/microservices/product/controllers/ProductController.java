@@ -1,51 +1,46 @@
 package org.jsamples.microservices.product.controllers;
 
 import org.jsamples.microservices.product.services.ProductService;
-import org.jsamples.microservices.product.services.vo.map.ProductListVO;
-import org.jsamples.microservices.product.services.vo.map.ProductUpdateVO;
-import org.jsamples.microservices.product.services.vo.map.ProductVO;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.jsamples.microservices.product.services.contract.vo.ProductCriteriaVO;
+import org.jsamples.microservices.product.services.contract.vo.ProductUpdateVO;
+import org.jsamples.microservices.product.services.contract.vo.ProductVO;
+import org.jsamples.microservices.seedwork.controllers.Controller;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 import javax.validation.Valid;
-import java.util.List;
 
 @RestController
 @RequestMapping("/products")
-public class ProductController {
-    private static final ResponseEntity<Void> NO_CONTENT = ResponseEntity.noContent().build();
-    private @Autowired ProductService productService;
+public class ProductController extends Controller<ProductService> {
 
     public ProductController() {}
 
-    @RequestMapping(method=RequestMethod.GET)
-    public List<ProductListVO> getAll() {
-        return productService.loadAll();
+    @GetMapping
+    public ResponseEntity<?> loadAll(ProductCriteriaVO criteria) {
+        return this.get(service -> service.loadAll(criteria));
     }
 
-    @RequestMapping(method=RequestMethod.POST)
+    @PostMapping
     public ResponseEntity<Void> add(@RequestBody @Valid ProductVO product, UriComponentsBuilder builder) {
-        UriComponents uri = builder.path("/products/{id}").buildAndExpand(productService.add(product).getId());
-        return ResponseEntity.created(uri.toUri()).build();
+        return this.create(service -> service.add(product), builder.path("/products/{id}"));
     }
 
-    @RequestMapping(path="/{id}", method=RequestMethod.GET)
-    public ProductVO get(@PathVariable int id) {
-        return productService.load(id);
+    @GetMapping("/{id}")
+    public ResponseEntity<?> load(@PathVariable int id) {
+        return this.get(service -> service.load(id));
     }
 
-    @RequestMapping(path="/{id}", method=RequestMethod.PATCH)
+    @PatchMapping("/{id}")
     public ResponseEntity<Void> update(@PathVariable int id, @RequestBody @Valid ProductUpdateVO update) {
-        update.setId(id);
-        productService.update(update);
-        return NO_CONTENT;
+        return this.perform(service -> {
+            update.setId(id);
+            service.update(update);
+        });
     }
 
-    @RequestMapping(path="/{id}", method=RequestMethod.DELETE)
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> remove(@PathVariable int id) {
-        productService.remove(id);
-        return NO_CONTENT;
+        return this.perform(service -> service.remove(id));
     }
 }

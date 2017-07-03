@@ -1,4 +1,4 @@
-package org.jsamples.microservices.product.services.vo.map;
+package org.jsamples.microservices.product.services.contract.vo;
 
 public class ProductListVO extends BaseProductVO {
     private static final long serialVersionUID = 4493099909247181447L;

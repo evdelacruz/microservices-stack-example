@@ -1,8 +1,7 @@
-package org.jsamples.microservices.seedwork.map;
+package org.jsamples.microservices.seedwork.binding;
 
 import org.modelmapper.ModelMapper;
 import java.util.function.Consumer;
-import java.util.stream.Stream;
 
 public final class Mapper {
     private ModelMapper delegate;
@@ -15,8 +14,9 @@ public final class Mapper {
         return delegate.map(source, clazz);
     }
 
-    public <T> Stream<T> map(Stream<?> source, Class<T> clazz) {
-        return source.map(obj -> this.map(obj, clazz));
+    public <T> T map(Object source, T obj) {
+        delegate.map(source, obj);
+        return obj;
     }
 
     void configure(Consumer<ModelMapper> configuration) {

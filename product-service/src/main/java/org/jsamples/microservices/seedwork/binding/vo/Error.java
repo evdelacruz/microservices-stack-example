@@ -1,4 +1,4 @@
-package org.jsamples.microservices.seedwork.vo;
+package org.jsamples.microservices.seedwork.binding.vo;
 
 import java.io.Serializable;
 

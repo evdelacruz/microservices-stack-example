@@ -1,4 +1,4 @@
-package org.jsamples.microservices.product.services.vo.map;
+package org.jsamples.microservices.product.services.contract.vo;
 
 import java.io.Serializable;
 

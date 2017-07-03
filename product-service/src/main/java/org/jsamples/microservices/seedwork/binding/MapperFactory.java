@@ -1,4 +1,4 @@
-package org.jsamples.microservices.seedwork.map;
+package org.jsamples.microservices.seedwork.binding;
 
 import org.modelmapper.Converter;
 import org.modelmapper.PropertyMap;
@@ -22,11 +22,11 @@ public final class MapperFactory {
                             mapper.addConverter((Converter) innerInstance);
                         }
                     } catch(Exception ex) {
-                        throw new IllegalArgumentException("Conveci\u00f3n de mapeo de classes violada", ex);
+                        throw new IllegalArgumentException("Mapping convention violated", ex);
                     }
                 });
             }  catch(Exception ex) {
-                throw new IllegalArgumentException("Conveci\u00f3n de mapeo de classes violada", ex);
+                throw new IllegalArgumentException("Mapping convention violated", ex);
             }
         });
         return MAPPER;

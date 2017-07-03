@@ -1,21 +1,20 @@
 package org.jsamples.microservices.product.services;
 
-import org.jsamples.microservices.product.services.datasource.domain.Product;
-import org.jsamples.microservices.product.services.vo.map.ProductListVO;
-import org.jsamples.microservices.product.services.vo.map.ProductUpdateVO;
-import org.jsamples.microservices.product.services.vo.map.ProductVO;
-
+import org.jsamples.microservices.product.services.contract.vo.ProductCriteriaVO;
+import org.jsamples.microservices.product.services.contract.vo.ProductUpdateVO;
+import org.jsamples.microservices.product.services.contract.vo.ProductVO;
+import org.jsamples.microservices.seedwork.service.Service;
 import java.util.List;
 
-public interface ProductService {
+public interface ProductService extends Service {
 
-    Product add(ProductVO product);
+    int add(ProductVO product);
 
     void update(ProductUpdateVO update);
 
-    boolean remove(int id);
+    void remove(int id);
 
     ProductVO load(int id);
 
-    List<ProductListVO> loadAll();
+    List<ProductVO> loadAll(ProductCriteriaVO criteria);
 }

@@ -1,10 +1,9 @@
-package org.jsamples.microservices.product.services.vo;
+package org.jsamples.microservices.product.services.contract;
 
 import org.jsamples.microservices.product.services.datasource.domain.Product;
-import org.jsamples.microservices.product.services.vo.map.ProductListVO;
-import org.jsamples.microservices.product.services.vo.map.ProductVO;
-import org.jsamples.microservices.seedwork.map.Mapper;
-import org.jsamples.microservices.seedwork.map.MapperFactory;
+import org.jsamples.microservices.product.services.contract.vo.ProductVO;
+import org.jsamples.microservices.seedwork.binding.Mapper;
+import org.jsamples.microservices.seedwork.binding.MapperFactory;
 import org.modelmapper.PropertyMap;
 
 public final class ProductMapper {
@@ -18,18 +17,16 @@ public final class ProductMapper {
         return MAPPER.map(source, ProductVO.class);
     }
 
-    static public ProductListVO mapList(Product source) {
-        return MAPPER.map(source, ProductListVO.class);
+    static public ProductVO map(Product source, ProductVO target) {
+        return MAPPER.map(source, target);
     }
 
     //<editor-fold desc="Mappings">
-    public class Product2ProdutVO extends PropertyMap<ProductVO, Product> {
-
-        public Product2ProdutVO() {}
+    public class Product2ProductVO extends PropertyMap<ProductVO, Product> {
 
         @Override
         protected void configure() {
-            this.map().setId(0);
+            this.skip().setId(0);
         }
     }
     //</editor-fold>

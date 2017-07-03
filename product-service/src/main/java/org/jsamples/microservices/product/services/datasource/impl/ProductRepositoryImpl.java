@@ -2,15 +2,15 @@ package org.jsamples.microservices.product.services.datasource.impl;
 
 import org.jsamples.microservices.product.services.datasource.ProductRepository;
 import org.jsamples.microservices.product.services.datasource.domain.Product;
-import org.jsamples.microservices.seedwork.repository.BaseRepository;
-import org.springframework.stereotype.Repository;
+import org.jsamples.microservices.seedwork.repository.Repository;
+
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Stream;
 
-@Repository("productRepository")
-public class ProductRepositoryImpl extends BaseRepository implements ProductRepository {
+@org.springframework.stereotype.Repository("productRepository")
+public class ProductRepositoryImpl extends Repository implements ProductRepository {
     private Map<Integer, Product> collection;
     private int counter;
 
