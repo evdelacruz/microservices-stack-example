@@ -48,7 +48,7 @@ public class ProductRepositoryImpl extends Repository implements ProductReposito
     }
 
     //<editor-fold desc="Support methods">
-    private synchronized int sequence() {
+    private int sequence() {
         return ++counter;
     }
     //</editor-fold>

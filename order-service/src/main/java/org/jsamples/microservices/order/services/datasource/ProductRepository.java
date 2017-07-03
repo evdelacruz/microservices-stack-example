@@ -1,10 +1,8 @@
 package org.jsamples.microservices.order.services.datasource;
 
-/**
- * ...
- *
- * @author Erick Vega De la Cruz
- * @since 0.0.0
- */
+import org.jsamples.microservices.order.services.contract.vo.ProductPriceVO;
+
 public interface ProductRepository {
+
+    ProductPriceVO getPrice(int id);
 }

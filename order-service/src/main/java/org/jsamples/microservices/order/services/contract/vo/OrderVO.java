@@ -1,48 +1,64 @@
 package org.jsamples.microservices.order.services.contract.vo;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import javax.validation.constraints.*;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 public class OrderVO implements Serializable {
     private static final long serialVersionUID = -3844273903298246103L;
-    private int id;
-    private CitizenVO holder;
-    private ProductVO product;
-    private int price;
+    private Integer id;
+    private String code;
+    private LocalDateTime deliverDate;
+    private Integer productId;
+    private Integer price;
 
     public OrderVO() {}
 
     //<editor-fold desc="Encapsulation">
-    @JsonProperty(access=JsonProperty.Access.READ_ONLY)
-    public int getId() {
+    @Null
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public CitizenVO getHolder() {
-        return holder;
+    @NotNull
+    @Pattern(regexp="[0-9]{1}-[A-Z]{5}")
+    public String getCode() {
+        return code;
     }
 
-    public void setHolder(CitizenVO holder) {
-        this.holder = holder;
+    public void setCode(String code) {
+        this.code = code;
     }
 
-    public ProductVO getProduct() {
-        return product;
+    @NotNull
+    public LocalDateTime getDeliverDate() {
+        return deliverDate;
     }
 
-    public void setProduct(ProductVO product) {
-        this.product = product;
+    public void setDeliverDate(LocalDateTime deliverDate) {
+        this.deliverDate = deliverDate;
     }
 
-    public int getPrice() {
+    @NotNull
+    @Min(1)
+    public Integer getProductId() {
+        return productId;
+    }
+
+    public void setProductId(Integer productId) {
+        this.productId = productId;
+    }
+
+    @Null
+    public Integer getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(Integer price) {
         this.price = price;
     }
     //</editor-fold>

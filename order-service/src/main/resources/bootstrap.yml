@@ -1,8 +1,8 @@
 spring:
     application:
-        name: rh-client
+        name: order-service
     cloud:
         config:
-            failFast: true
+            fail-fast: true
             uri: http://localhost:8280
 

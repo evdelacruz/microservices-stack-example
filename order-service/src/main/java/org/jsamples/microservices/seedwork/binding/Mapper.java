@@ -1,6 +1,7 @@
 package org.jsamples.microservices.seedwork.binding;
 
 import org.modelmapper.ModelMapper;
+
 import java.util.function.Consumer;
 
 public final class Mapper {

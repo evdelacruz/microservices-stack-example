@@ -1,4 +1,4 @@
-package org.jsamples.microservices.product.controllers;
+package org.jsamples.microservices.order.controllers;
 
 import org.jsamples.microservices.seedwork.binding.vo.Error;
 import org.slf4j.Logger;

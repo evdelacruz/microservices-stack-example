@@ -1,10 +1,18 @@
 package org.jsamples.microservices.order.services.datasource;
 
-/**
- * ...
- *
- * @author Erick Vega De la Cruz
- * @since 0.0.0
- */
+import org.jsamples.microservices.order.services.datasource.domain.Order;
+import java.util.Optional;
+import java.util.stream.Stream;
+
 public interface OrderRepository {
+
+    Order save(Order product);
+
+    boolean delete(int id);
+
+    boolean existCode(String code);
+
+    Optional<Order> find(int id);
+
+    Stream<Order> findAll();
 }
