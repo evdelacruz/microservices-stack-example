@@ -1,0 +1,18 @@
+# Server Properties
+server:
+    error:
+        whitelabel:
+            enabled: false
+
+# Spring Framework Properties
+spring:
+    application:
+        name: config-server
+    profiles:
+        active: native
+    cloud:
+        config:
+            server:
+                native:
+                    fail-on-error: true
+                    search-locations: ${app.config-files.dir}

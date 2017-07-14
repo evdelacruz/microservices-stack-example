@@ -1,0 +1,3 @@
+rootProject.name = 'microservices'
+include 'platform:seedwork-framework', 'platform:config-server', 'platform:eureka-server',
+        'services:product-service'

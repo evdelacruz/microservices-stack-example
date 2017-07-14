@@ -1,0 +1,9 @@
+# Application Properties
+app:
+    config-server:
+        uri: http://<host>:<port>
+        username: <username>
+        password: <password>
+    security:
+        username: <username>
+        password: <password>

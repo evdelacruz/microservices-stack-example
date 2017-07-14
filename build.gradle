@@ -1,0 +1,31 @@
+subprojects {
+    group 'org.jsamples.microservices'
+    version 'Lawton-ALFA'
+
+    ext {
+        boot_version = '1.5.4.RELEASE'
+        management_version = '1.0.3.RELEASE'
+        platform_version = 'Brussels-SR3'
+        cloud_version = 'Dalston.SR1'
+        specification_vendor = 'Erick\'s Software'
+        implementation_vendor = 'evdelacruz'
+        implementation_version = (null != System.env.BUILD_NUMBER) ? System.env.BUILD_NUMBER : '0'
+        implementation_unit = '501-1'
+    }
+
+    buildscript {
+        repositories {
+            mavenCentral()
+        }
+    }
+
+    apply plugin: 'java'
+
+    compileJava.options.encoding = 'UTF-8'
+
+    sourceCompatibility = 1.8
+
+    repositories {
+        mavenCentral()
+    }
+}
