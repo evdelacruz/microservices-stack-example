@@ -1,6 +1,6 @@
-# Server Properties:
+# Server Properties
 server:
-   port: 8081
+    port: 8081
 
 # Eureka Properties:
 eureka:
@@ -10,5 +10,6 @@ eureka:
     client:
         register-with-eureka: false
         fetch-registry: false
-#    server:
-#        enable-self-preservation: false
+# Test environment ONLY
+    server:
+        renewal-percent-threshold: 0.49

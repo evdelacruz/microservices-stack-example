@@ -1,21 +1,14 @@
-package org.jsamples.microservices.config.controller;
+package org.jsamples.microservices.seedwork.controllers;
 
+import org.springframework.boot.autoconfigure.web.ErrorController;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import static org.springframework.http.ResponseEntity.notFound;
 import static org.springframework.http.ResponseEntity.status;
 
-/**
- * ...
- *
- * @author Erick Vega De la Cruz
- * @since 1.0
- */
-@Controller
-public class ErrorController implements org.springframework.boot.autoconfigure.web.ErrorController {
+public class BasicErrorController implements ErrorController {
 
     @Override
     public String getErrorPath() {
