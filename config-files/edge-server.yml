@@ -1,0 +1,26 @@
+# Server Properties
+server:
+    port: 8082
+    tomcat:
+        accesslog:
+          enabled: true
+          directory: logs
+          pattern: "%h %t %r %s %b %T"
+          prefix: edge_access
+
+# Eureka Properties
+eureka:
+    client:
+        register-with-eureka: false
+        serviceUrl:
+            defaultZone: http://localhost:8081/eureka/
+
+# Zuul Properties
+zuul:
+    routes:
+        orders:
+            path: /oqc/**
+            service-id: order-service
+        products:
+            path: /pqc/**
+            service-id: product-service

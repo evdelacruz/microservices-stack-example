@@ -19,7 +19,6 @@ dependencies {
     compile 'org.springframework.boot:spring-boot'
     compile 'org.springframework.boot:spring-boot-autoconfigure'
     compile 'org.springframework:spring-webmvc'
-    compile 'org.springframework.security:spring-security-config'
     compile 'org.slf4j:slf4j-api'
     compile 'org.modelmapper:modelmapper:1.0.0'
 }

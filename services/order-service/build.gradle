@@ -19,12 +19,14 @@ dependencyManagement {
 
 dependencies {
     compile 'org.springframework.cloud:spring-cloud-config-client'
-    compile 'org.springframework.cloud:spring-cloud-starter-eureka-server'
+    compile 'org.springframework.cloud:spring-cloud-starter-eureka'
+    compile 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
+    compile 'org.modelmapper:modelmapper:1.0.0'
     compile project(':platform:seedwork-framework')
 }
 
 bootRepackage {
-    mainClass = 'org.jsamples.microservices.eureka.Main'
+    mainClass = 'org.jsamples.microservices.order.Main'
     executable = true
 }
 
@@ -32,12 +34,12 @@ jar {
     manifest {
         attributes 'Specification-Vendor'       : specification_vendor,
                    'Specification-Version'      : version,
-                   'Specification-Title'        : 'Microservices Discovery-Registry Server',
+                   'Specification-Title'        : 'Microservices Order Service',
                    'Implementation-Vendor'	    : implementation_vendor,
                    'Implementation-Version'	    : implementation_version,
-                   'Implementation-Title'	    : 'eureka-server',
+                   'Implementation-Title'	    : 'order-service',
                    'Implementation-Unit'   	    : implementation_unit,
                    'Java-Specification-Version' : sourceCompatibility
     }
-    baseName = 'eureka-server'
+    baseName = 'order-service'
 }

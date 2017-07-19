@@ -1,0 +1,10 @@
+# Spring Framework Properties
+spring:
+    application:
+        name: product-service
+    cloud:
+        config:
+            fail-fast: true
+            uri: ${app.config-server.uri}
+            username: ${app.config-server.username}
+            password: ${app.config-server.password}
