@@ -1,0 +1,38 @@
+version '1.0-SNAPSHOT'
+
+buildscript {
+    dependencies {
+        classpath "io.spring.gradle:dependency-management-plugin:${management_version}"
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${boot_version}"
+    }
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+dependencyManagement {
+    imports {
+        mavenBom "io.spring.platform:platform-bom:${platform_version}"
+    }
+}
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot'
+    compile 'org.springframework.boot:spring-boot-autoconfigure'
+    compile 'org.springframework:spring-webmvc'
+    compile 'org.slf4j:slf4j-api'
+    compile 'org.modelmapper:modelmapper:1.0.0'
+}
+
+jar {
+    manifest {
+        attributes 'Specification-Vendor'       : specification_vendor,
+                   'Specification-Version'      : version,
+                   'Specification-Title'        : 'Microservices Framework Core',
+                   'Implementation-Vendor'	    : implementation_vendor,
+                   'Implementation-Version'	    : implementation_version,
+                   'Implementation-Title'	    : 'seedwork-framework',
+                   'Implementation-Unit'   	    : implementation_unit,
+                   'Java-Specification-Version' : sourceCompatibility
+    }
+    baseName = 'seedwork-framework'
+}

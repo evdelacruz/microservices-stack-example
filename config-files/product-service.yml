@@ -1,7 +1,9 @@
+# Server Properties
 server:
-    port: 8480
+    port: 8280
 
+# Eureka Properties
 eureka:
     client:
         serviceUrl:
-            defaultZone: http://localhost:8761/eureka/
+            defaultZone: http://localhost:8081/eureka/

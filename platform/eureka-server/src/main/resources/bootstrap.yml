@@ -1,0 +1,16 @@
+# Server Properties
+server:
+    error:
+        whitelabel:
+            enabled: false
+
+# Spring Framework Properties
+spring:
+    application:
+        name: eureka-server
+    cloud:
+        config:
+            fail-fast: true
+            uri: ${app.config-server.uri}
+            username: ${app.config-server.username}
+            password: ${app.config-server.password}

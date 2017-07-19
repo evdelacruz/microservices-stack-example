@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-workspace name="Microservices" soapui-version="5.2.1" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:project name="product-service">C:/Workspace/personal/microservices/projects/tests/product-service-soapui-project.xml</con:project>
+  <con:project name="order-service">C:/Workspace/personal/microservices/projects/tests/order-service-soapui-project.xml</con:project>
+  <con:project name="edge-service">C:/Workspace/personal/microservices/projects/tests/edge-service-soapui-project.xml</con:project>
+  <con:project name="config-server">C:/Workspace/personal/microservices/projects/tests/config-server-soapui-project.xml</con:project>
+  <con:collectInfoForSupport>false</con:collectInfoForSupport>
+</con:soapui-workspace>

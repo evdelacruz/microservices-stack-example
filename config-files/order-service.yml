@@ -1,10 +1,16 @@
 server:
-    port: 8380
+    port: 8281
+    tomcat:
+        accesslog:
+          enabled: true
+          directory: logs
+          pattern: "%h %t %r %s %b %T"
+          prefix: order_access
 
 eureka:
     client:
         serviceUrl:
-            defaultZone: http://localhost:8761/eureka/
+            defaultZone: http://localhost:8081/eureka/
 
 
 #Application Properties

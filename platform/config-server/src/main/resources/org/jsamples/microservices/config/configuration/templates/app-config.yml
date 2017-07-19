@@ -1,0 +1,11 @@
+# Server Properties
+server:
+    port: <port>
+
+# Application Properties
+app:
+    security:
+        username: <username>
+        password: <password>
+    config-files:
+        dir: <dir>
